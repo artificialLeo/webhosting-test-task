@@ -177,17 +177,17 @@ public class App {
     private static class WaitingTimeline {
         private final char type = 'C';
 
-        private int serviceId;
-        private int variationId;
+        private final int serviceId;
+        private final int variationId;
 
-        private int typeId;
-        private int categoryId;
-        private int subcategoryId;
+        private final int typeId;
+        private final int categoryId;
+        private final int subcategoryId;
 
-        private char responseType;
-        private long responseDate;
+        private final char responseType;
+        private final long responseDate;
 
-        private int waitingTime;
+        private final int waitingTime;
 
         public WaitingTimeline(String waitingTimeline) {
             String[] rawData = waitingTimeline.split(" ");
@@ -282,20 +282,20 @@ public class App {
     private static class QueryLine {
         private final char type = 'D';
 
-        private int serviceIdNotParsedLength;
-        private int serviceId;
-        private int variationId;
+        private final int serviceIdNotParsedLength;
+        private final int serviceId;
+        private final int variationId;
 
-        private int questionTypeIdNotParsedLength;
-        private int typeId;
-        private int categoryId;
-        private int subcategoryId;
+        private final int questionTypeIdNotParsedLength;
+        private final int typeId;
+        private final int categoryId;
+        private final int subcategoryId;
 
-        private char responseType;
+        private final char responseType;
 
         private boolean isDateRange = false;
-        private long fromDate;
-        private long toDate;
+        private final long fromDate;
+        private final long toDate;
 
         public QueryLine(String queryLine) {
             String[] rawData = queryLine.split(" ");
