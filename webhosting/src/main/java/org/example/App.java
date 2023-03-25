@@ -115,7 +115,7 @@ public class App {
                 continue;
             }
 
-            if (queryLine.isDateRange) {
+            if (queryLine.dateRange) {
                 if (waitingTimelines[i].responseDate > queryLine.fromDate && waitingTimelines[i].responseDate < queryLine.toDate) {
                     waitingTimelineMatchesCounter++;
                 } else {
@@ -293,7 +293,7 @@ public class App {
 
         private final char responseType;
 
-        private boolean isDateRange = false;
+        private boolean dateRange = false;
         private final long fromDate;
         private final long toDate;
 
@@ -336,7 +336,7 @@ public class App {
 
             if (rawData[4].split("-").length == 2) {
                 toDate = convert_DD_MM_YYYY_toLong(rawData[4].split("-")[1]);
-                this.isDateRange = true;
+                this.dateRange = true;
             }
 
             this.fromDate = fromDate;
@@ -379,8 +379,8 @@ public class App {
             return responseType;
         }
 
-        public boolean isDateRange() {
-            return isDateRange;
+        public boolean dateRange() {
+            return dateRange;
         }
 
         public long getFromDate() {
@@ -403,7 +403,7 @@ public class App {
                     ", categoryId=" + categoryId +
                     ", subcategoryId=" + subcategoryId +
                     ", responseType=" + responseType +
-                    ", isDateRange=" + isDateRange +
+                    ", dateRange=" + dateRange +
                     ", fromDate=" + fromDate +
                     ", toDate=" + toDate +
                     '}';
